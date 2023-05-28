@@ -1,0 +1,85 @@
+<html>
+<head>
+<script type="text/javascript">
+function obliczanie(dane)
+{
+wynik.innerHTML=" ";
+cena_koncowa=0;
+if ( dane.wybor[0].checked)
+93
+{
+cena_koncowa=parseFloat(dane.cena.value);
+}
+if ( dane.wybor[1].checked)
+{
+cena_koncowa=0.9*parseFloat(dane.cena.value);
+}
+if ( dane.wybor[2].checked)
+{
+cena_koncowa=0.8*parseFloat(dane.cena.value);
+}
+if (dane.vat.selectedIndex==0)
+{
+cena_koncowa=cena_koncowa;
+}
+if (dane.vat.selectedIndex==1)
+{
+cena_koncowa=1.07*cena_koncowa;
+}
+if (dane.vat.selectedIndex==2)
+{
+cena_koncowa=1.23*cena_koncowa;
+}
+if(dane.ubezpieczenie.checked == true)
+{
+cena_koncowa=1.15*cena_koncowa;
+}
+if(dane.gwarancja.checked == true)
+{
+cena_koncowa=1.28*cena_koncowa;
+}
+wynik.innerHTML="do zapłaty "+cena_koncowa.toFixed(2)+" zł";
+}
+</script>
+</head>
+<body>
+<form name="formularz">
+<b>Podaj cenę:</b><br>
+cena netto<input type="text" name="cena"/><br><br>
+<b>Wybierz pizzę (wszystkie pizze mają średnicę 35cm):</b><br>
+Margherita (ser,sos) 25zł<input type="radio" name="wybor" value=25 /><br><br>
+Z szynką (ser,szynka,sos) 27zł<input type="radio" name="wybor" value=27 /><br><br>
+Salami (ser,salami,szynka, sos) 29zł<input type="radio" name="wybor" value=29 /><br><br>
+Z pieczarkami (ser, szynka, pieczarki, sos) 30zł<input type="radio" name="wybor" value=30 /><br><br>
+Hawajska (ser, szynka, ananas, sos) 32zł<input type="radio" name="wybor" value=32 /><br><br>
+Diavollo  (ser, salami, cebula, papryka, papryka peperoni, oliwki, tabasco, sos)35zł <input type="radio" name="wybor" value=35 /><br><br>
+Pizza Klienta (ser, 5 dowolnych składników wybranych przez klienta, sos) 33zł<input type="radio" name="wybor" value=33 /><br><br>
+Wegańska (ser wegański, pieczarki, cebula, tofu, pomidor, rukola, sos) 32zł<input type="radio" name="wybor" value=32 /><br><br>
+Wiejska (ser, kiełbasa, kurczak, wieprzowina, pieczarki, cebula, sos) 34zł<input type="radio" name="wybor" value=34 /><br><br>
+Frutti Di Mare (ser, owoce morza, oliwki, sos) <input type="radio" name="wybor" value=20 /><br><br>
+<b>Wybierz Napój:</b><br>
+Woda Niegazowana 0,5 litra 4zł<input type="radio" name="wybor" value=4 /><br><br>
+Woda Gazowana 0,5 litra 4zł<input type="radio" name="wybor" value=4 /><br><br>
+Nestea 0,5 litra 6zł<input type="radio" name="wybor" value=6 /><br><br>
+Coca-Cola 0,5 litra 7zł<input type="radio" name="wybor" value=7 /><br><br>
+Fanta 0,5 litra 7zł<input type="radio" name="wybor" value=7 /><br><br>
+Sok pomarańczowy 330ml 6zł<input type="radio" name="wybor" value=6 /><br><br>
+Sok jabłkowy 330ml 6zł<input type="radio" name="wybor" value=6 /><br><br>
+Piwo 0,5 litra 8zł<input type="radio" name="wybor" value=8 /><br><br>
+Brak napoju 0zł<input type="radio" name="wybor" value=0 /><br><br>
+</select><br><br>
+<b>Wybierz sałatkę:</b><br>
+Sałatka Grecka (ser feta, pomidor, ogórek, papryka, oliwki, cebula czerwona, sałata, sos czosnkowy)30zł<input type="radio" name="wybor" value=30 /><br><br>
+Sałatka Cezar (grillowany kurczak, chrupiący boczek, sałata rzymska i lodowa, świeżo tarty parmezan, kapary, grzanki, sos cezar) 32zł<input type="radio" name="wybor" value=32 /><br><br>
+ Sałatka Orientalna z Krewetkami (kolendra, kiełki fasoli mung, makaron ryżowy, dymka, świeża chilli, mięta, orzechy, sos chili) 34zł<input type="radio" name="wybor" value=34 /><br><br>
+Sałatka Rossa (mix sałat, burak pieczony, cebula karmelizowana, kozi ser, rukola, orzechy, pomarańcza, sos) 31.50zł<input type="radio" name="wybor" value=31.50 /><br><br>
+Sałatka z Kurczakiem (mix sałat, pomidor, ogórek, kukurydza, papryka, kurczak, sos) 31.50zł<input type="radio" name="wybor" value=31.50 /><br><br>
+Sałatka z Panierowanym Serem Camembert (gruszka i cebula karmelizowana, mix sałat, orzechy włoskie, rukola, sos żurawinowy) 33.50zł<input type="radio" name="wybor" value=33.50 /><br><br>
+<!-- <input type="button" value="Oblicz....." onClick="obliczanie(this.form)"/><br><br> -->
+<input type="button" value="Oblicz....." onClick="obliczanie(this.form)"/><br><br>
+</form>
+<table>
+<tr id="wynik"></tr>
+</table>
+</body>
+</html>

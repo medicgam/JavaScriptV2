@@ -1,0 +1,32 @@
+<html>
+<head>
+<title> Zadanie 82</title>
+ <script language="JavaScript">
+ function pushbutton() {
+ alert("Czesc !");}
+ </script>
+</head>
+<body>
+<p style="color: red; font-size: 2cm;">Redzimski</p>
+<font color="green" size="5cm">
+      dzis = new Date() - wpisuje aktuany dzien do zmiennej date <br>
+      dzis = dzis.getHours() - wpisuje aktualna godzine do zmiennej date <br>
+      dzis = dzis.getMinutes() - wpisuje aktualna minute do zmiennej date <br>
+      dzis = dzis.getMonth()+1 - wpisuje aktualny miesiac do zmiennej date <br>
+      dzis = getDate() - wpisuje aktualna date do zmiennej date <br>
+      dzis = dzis.getFullYear() - wpisuje aktualny rok do zmiennej date <br>
+</font>
+Ostatnio zmodyfikowany
+<script language="LiveScript">
+ document.write(document.lastModified,"<br>")
+</script>
+<form>
+ <input type="button" name="Button1" value="Naciśnij mnie" onclick="pushbutton()">
+</form>
+<script language="JavaScript">
+ dzis = new Date()
+ document.write("<br>Aktualny czas : ",dzis.getHours(),":",dzis.getMinutes())
+ document.write("<br>Aktualna data : <font color='red' size='1cm'>",dzis.getDate(),"</font>,<font color='green' size='1cm'>",dzis.getMonth()+1,"</font>,<font color='blue' size='1cm'>",dzis.getFullYear(),"</font>");
+</script>
+</body>
+</html>
